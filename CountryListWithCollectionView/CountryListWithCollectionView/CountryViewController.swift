@@ -25,7 +25,7 @@ class CountryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-       // collectionView.delegate = self
+       collectionView.delegate = self
         collectionView.backgroundColor = .blue
         
         fetchCountry(searchQuery: "un")
@@ -57,22 +57,23 @@ extension CountryViewController: UICollectionViewDataSource {
         return cell
     }
 }
-//
-//extension DogViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return dogImages.count
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogCell", for: indexPath) as? DogCell else {
-//            fatalError("could downcast to DogCell")
-//        }
-//        let dogImage = dogImages[indexPath.row]
-//        cell.configureCell(with: dogImage)
-//        return cell
-//    }
-//}
+
 
 // here we are using UICollectionViewFlowLayout
+
+extension CountryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       // let interItemSpacing: CGFloat = 10 // space between items
+        let maxWidth = UIScreen.main.bounds.size.width // device's width
+        //let numberOfItems: CGFloat = 3 // items
+        let numberOfItems: CGFloat = 1
+       // let totalSpacing: CGFloat = numberOfItems * interItemSpacing
+       // let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfItems
+        let itemWidth: CGFloat = maxWidth / numberOfItems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+}
 
 //extension DogViewController: UICollectionViewDelegateFlowLayout {
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
