@@ -28,10 +28,24 @@ class CountryDetailViewController: UIViewController {
             fatalError("could not get object from prepare for segue")
         }
         countryName.text = oneCountry.name
-        capitalLabel.text = oneCountry.capital
-        populationLabel.text = oneCountry.population.description
+        capitalLabel.text = "Capital: \(oneCountry.capital)"
+        populationLabel.text = "Population of the country is \(oneCountry.population.description) people"
         
-    
+        let imageURL = "https://www.countryflags.io/\(oneCountry.alpha2Code)/shiny/64.png"
+        
+        countryImage.getImage(with: imageURL) {(result) in
+             switch result {
+             case .failure:
+                 DispatchQueue.main.async {
+                     self.countryImage.image = UIImage(systemName: "photo.fill")
+                 }
+             case .success(let countryImage):
+                 DispatchQueue.main.async {
+                     self.countryImage.image = countryImage
+                 }
+             }
+         }
     }
-
 }
+
+

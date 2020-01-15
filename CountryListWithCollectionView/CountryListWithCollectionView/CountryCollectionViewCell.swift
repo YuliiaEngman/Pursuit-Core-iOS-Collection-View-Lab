@@ -16,12 +16,10 @@ class CountryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
     
-
-    
     public func configureCell(for country: Country) {
         countryNameLabel.text = country.name
         capitalLabel.text = country.capital
-        populationLabel.text = country.population.description
+        populationLabel.text = "Population: \(country.population.description)"
         
         let imageURL = "https://www.countryflags.io/\(country.alpha2Code)/shiny/64.png"
         

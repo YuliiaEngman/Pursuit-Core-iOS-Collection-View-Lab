@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Country View Controller-->
+        <!--COUNTRIES-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CountryViewController" customModule="CountryListWithCollectionView" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pKK-ga-w8p"/>
+                    <navigationItem key="navigationItem" title="COUNTRIES" id="pKK-ga-w8p"/>
                     <connections>
                         <outlet property="collectionView" destination="om1-r3-UXp" id="rKf-Ig-xen"/>
                         <outlet property="searchBar" destination="7RH-tl-5dZ" id="wjz-ma-gud"/>
