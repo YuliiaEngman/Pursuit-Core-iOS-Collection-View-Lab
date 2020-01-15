@@ -80,7 +80,7 @@ extension CountryViewController: UICollectionViewDelegateFlowLayout {
         let totalSpacing: CGFloat = numberOfItems * interItemSpacing
         let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfItems
         
-        return CGSize(width: itemWidth, height: itemWidth)
+        return CGSize(width: itemWidth, height: 300)
     }
 }
 
