@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4C242E23CFB36F000298E6 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C242D23CFB36F000298E6 /* CountryDetailViewController.swift */; };
 		0FF592D023CE4F3B00C9EDDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF592CF23CE4F3B00C9EDDD /* AppDelegate.swift */; };
 		0FF592D223CE4F3B00C9EDDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF592D123CE4F3B00C9EDDD /* SceneDelegate.swift */; };
 		0FF592D423CE4F3B00C9EDDD /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF592D323CE4F3B00C9EDDD /* CountryViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4C242D23CFB36F000298E6 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		0FF592CC23CE4F3A00C9EDDD /* CountryListWithCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryListWithCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF592CF23CE4F3B00C9EDDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FF592D123CE4F3B00C9EDDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0FF592D523CE4F3B00C9EDDD /* Main.storyboard */,
 				0FF592E323CE503900C9EDDD /* CountryCollectionViewCell.swift */,
 				0FF592EA23CE584B00C9EDDD /* CountrySearchAPIClient.swift */,
+				0F4C242D23CFB36F000298E6 /* CountryDetailViewController.swift */,
 				0FF592EC23CE58CC00C9EDDD /* CountryModel.swift */,
 				0FF592D823CE4F3D00C9EDDD /* Assets.xcassets */,
 				0FF592DA23CE4F3D00C9EDDD /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 				0FF592D423CE4F3B00C9EDDD /* CountryViewController.swift in Sources */,
 				0FF592EB23CE584B00C9EDDD /* CountrySearchAPIClient.swift in Sources */,
 				0FF592ED23CE58CC00C9EDDD /* CountryModel.swift in Sources */,
+				0F4C242E23CFB36F000298E6 /* CountryDetailViewController.swift in Sources */,
 				0FF592E423CE503900C9EDDD /* CountryCollectionViewCell.swift in Sources */,
 				0FF592D023CE4F3B00C9EDDD /* AppDelegate.swift in Sources */,
 				0FF592D223CE4F3B00C9EDDD /* SceneDelegate.swift in Sources */,
