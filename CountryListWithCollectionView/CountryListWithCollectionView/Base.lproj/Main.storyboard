@@ -143,6 +143,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eup-BU-0HD">
+                                <rect key="frame" x="20" y="528" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -166,6 +173,7 @@
                         <outlet property="capitalLabel" destination="hZ7-zC-xAZ" id="Y6F-IH-8qP"/>
                         <outlet property="countryImage" destination="LX3-th-bl1" id="GKl-KR-Jys"/>
                         <outlet property="countryName" destination="1YM-Pb-me7" id="CTa-Ft-k4Q"/>
+                        <outlet property="currencyLabel" destination="eup-BU-0HD" id="sOQ-tA-Bne"/>
                         <outlet property="populationLabel" destination="ueO-fZ-c1c" id="pUG-se-Epg"/>
                     </connections>
                 </viewController>
