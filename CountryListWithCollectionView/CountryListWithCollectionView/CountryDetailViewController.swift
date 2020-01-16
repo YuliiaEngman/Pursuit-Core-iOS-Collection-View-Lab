@@ -18,21 +18,27 @@ class CountryDetailViewController: UIViewController {
     
     
     var oneCountry: Country?
-    
     var currency: Currency?
+    var rate: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
-    private func getCurrency(forKey: String) {
+    private func getCurrency(countryCode: String) {
         ExchangeSearchAPIClient.fetchExchangeRate(completion: { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 print("error \(appError)")
             case .success(let exchangeRate):
-                self?.currency = exchangeRate
+                self?.rate = exchangeRate.rates[countryCode]
+                DispatchQueue.main.async {
+                     self?.currencyLabel.text = "1 USD = \(self?.rate ?? 0)"
+                }
+               
+                
+                //self?.currency = exchangeRate
             }
         })
     }
@@ -64,8 +70,8 @@ class CountryDetailViewController: UIViewController {
         }
         
         let countryCurrency = oneCountry.currencies.first?.code ?? "no currency code"
-        getCurrency(forKey: countryCurrency)
-        currencyLabel.text = currency?.rates[countryCurrency]?.description ?? "cannot get exchangeRate"
+        getCurrency(countryCode: countryCurrency)
+        //currencyLabel.text = currency?.rates[countryCurrency]?.description ?? "cannot get exchangeRate"
     }
 }
 
