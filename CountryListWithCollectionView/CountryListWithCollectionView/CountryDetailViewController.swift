@@ -33,10 +33,11 @@ class CountryDetailViewController: UIViewController {
                 print("error \(appError)")
             case .success(let exchangeRate):
                 self?.rate = exchangeRate.rates[countryCode]
-                let roundedRate = self?.rate ?? 0
+                let convertedFromEuroToDollars = (self?.rate ?? 0) / (exchangeRate.rates["USD"] ?? 0)
+                //let roundedRate = self?.rate ?? 0
                 //let roundedRate = self?.rate?.rounded() ?? 0
                 DispatchQueue.main.async {
-                    self?.currencyLabel.text = "1 USD = \(String(format: "%.2f", roundedRate)) \(countryCode)"
+                    self?.currencyLabel.text = "1 USD = \(String(format: "%.2f", convertedFromEuroToDollars)) \(countryCode)"
                 }
                
                 
