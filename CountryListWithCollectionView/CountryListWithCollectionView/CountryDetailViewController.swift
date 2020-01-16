@@ -41,9 +41,9 @@ class CountryDetailViewController: UIViewController {
         guard let oneCountry = oneCountry else {
             fatalError("could not get object from prepare for segue")
         }
-        //        guard let currency = currency else {
-        //            fatalError("could not get currency object")
-        //        }
+        //                guard let currency = currency else {
+        //                    fatalError("could not get currency object")
+        //                }
         countryName.text = oneCountry.name
         capitalLabel.text = "Capital: \(oneCountry.capital)"
         populationLabel.text = "Population of the country is \(oneCountry.population.description) people"
@@ -65,9 +65,9 @@ class CountryDetailViewController: UIViewController {
         
         let countryCurrency = oneCountry.currencies.first?.code ?? "no currency code"
         getCurrency(forKey: countryCurrency)
-        currencyLabel.text = currency?.rates[countryCurrency]?.description
+        currencyLabel.text = currency?.rates[countryCurrency]?.description ?? "cannot get exchangeRate"
     }
-
 }
+
 
 
