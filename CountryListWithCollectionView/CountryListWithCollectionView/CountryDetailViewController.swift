@@ -19,41 +19,55 @@ class CountryDetailViewController: UIViewController {
     
     var oneCountry: Country?
     
-   // var currency: Currency?
-
+    var currency: Currency?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    private func getCurrency(forKey: String) {
+        ExchangeSearchAPIClient.fetchExchangeRate(completion: { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                print("error \(appError)")
+            case .success(let exchangeRate):
+                self?.currency = exchangeRate
+            }
+        })
     }
     
     func updateUI() {
         guard let oneCountry = oneCountry else {
             fatalError("could not get object from prepare for segue")
         }
-//        guard let currency = currency else {
-//            fatalError("could not get currency object")
-//        }
+        //        guard let currency = currency else {
+        //            fatalError("could not get currency object")
+        //        }
         countryName.text = oneCountry.name
         capitalLabel.text = "Capital: \(oneCountry.capital)"
         populationLabel.text = "Population of the country is \(oneCountry.population.description) people"
         
-      //  currencyLabel.text = currency.rates.description
-        
         let imageURL = "https://www.countryflags.io/\(oneCountry.alpha2Code)/shiny/64.png"
         
         countryImage.getImage(with: imageURL) {(result) in
-             switch result {
-             case .failure:
-                 DispatchQueue.main.async {
-                     self.countryImage.image = UIImage(systemName: "photo.fill")
-                 }
-             case .success(let countryImage):
-                 DispatchQueue.main.async {
-                     self.countryImage.image = countryImage
-                 }
-             }
-         }
+            switch result {
+            case .failure:
+                DispatchQueue.main.async {
+                    self.countryImage.image = UIImage(systemName: "photo.fill")
+                }
+            case .success(let countryImage):
+                DispatchQueue.main.async {
+                    self.countryImage.image = countryImage
+                }
+            }
+        }
+        
+        let countryCurrency = oneCountry.currencies.first?.code ?? "no currency code"
+        getCurrency(forKey: countryCurrency)
+        currencyLabel.text = currency?.rates[countryCurrency]?.description
     }
+
 }
 
 

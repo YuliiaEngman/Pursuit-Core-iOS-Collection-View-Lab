@@ -29,8 +29,8 @@ class CountryViewController: UIViewController {
         collectionView.backgroundColor = .gray
         searchBar.delegate = self
         
-        searchCountry(searchQuery: "uk")
-        navigationItem.title = "Country Search"
+        searchCountry(searchQuery: "")
+       // navigationItem.title = "Country Search"
     }
     
     private func searchCountry(searchQuery: String) {

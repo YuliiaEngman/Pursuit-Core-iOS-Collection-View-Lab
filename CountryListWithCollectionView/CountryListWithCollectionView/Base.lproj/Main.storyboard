@@ -143,9 +143,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eup-BU-0HD">
-                                <rect key="frame" x="20" y="528" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eup-BU-0HD">
+                                <rect key="frame" x="20" y="530" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -154,13 +153,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="LX3-th-bl1" firstAttribute="leading" secondItem="71w-ce-Wei" secondAttribute="leading" constant="20" id="3Lb-OQ-Lc4"/>
+                            <constraint firstItem="71w-ce-Wei" firstAttribute="trailing" secondItem="eup-BU-0HD" secondAttribute="trailing" constant="20" id="8ms-65-Wy3"/>
                             <constraint firstItem="LX3-th-bl1" firstAttribute="top" secondItem="71w-ce-Wei" secondAttribute="top" constant="25" id="CZG-7q-8CT"/>
+                            <constraint firstItem="eup-BU-0HD" firstAttribute="leading" secondItem="71w-ce-Wei" secondAttribute="leading" constant="20" id="JlP-yE-B48"/>
                             <constraint firstItem="1YM-Pb-me7" firstAttribute="top" secondItem="LX3-th-bl1" secondAttribute="bottom" constant="20" id="L9F-JZ-ocv"/>
                             <constraint firstItem="ueO-fZ-c1c" firstAttribute="leading" secondItem="71w-ce-Wei" secondAttribute="leading" constant="20" id="MOh-aS-Ttz"/>
                             <constraint firstItem="hZ7-zC-xAZ" firstAttribute="leading" secondItem="71w-ce-Wei" secondAttribute="leading" constant="20" id="Qf5-g9-H3Z"/>
                             <constraint firstItem="1YM-Pb-me7" firstAttribute="leading" secondItem="71w-ce-Wei" secondAttribute="leading" constant="20" id="Vlz-aI-8FO"/>
                             <constraint firstItem="71w-ce-Wei" firstAttribute="trailing" secondItem="LX3-th-bl1" secondAttribute="trailing" constant="20" id="dHa-Vt-PNq"/>
                             <constraint firstItem="71w-ce-Wei" firstAttribute="trailing" secondItem="1YM-Pb-me7" secondAttribute="trailing" constant="20" id="hnx-dv-Uoc"/>
+                            <constraint firstItem="eup-BU-0HD" firstAttribute="top" secondItem="ueO-fZ-c1c" secondAttribute="bottom" constant="100" id="hqw-7w-IIp"/>
                             <constraint firstItem="71w-ce-Wei" firstAttribute="trailing" secondItem="hZ7-zC-xAZ" secondAttribute="trailing" constant="20" id="kWK-aR-YWg"/>
                             <constraint firstItem="hZ7-zC-xAZ" firstAttribute="top" secondItem="1YM-Pb-me7" secondAttribute="bottom" constant="20" id="ms1-mt-Ltb"/>
                             <constraint firstItem="71w-ce-Wei" firstAttribute="trailing" secondItem="ueO-fZ-c1c" secondAttribute="trailing" constant="20" id="sgx-C9-M2R"/>
