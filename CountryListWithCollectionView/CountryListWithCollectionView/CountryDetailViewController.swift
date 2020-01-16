@@ -18,7 +18,7 @@ class CountryDetailViewController: UIViewController {
     
     
     var oneCountry: Country?
-    var currency: Currency?
+    //var currency: Currency?
     var rate: Double?
     
     override func viewDidLoad() {
@@ -33,8 +33,10 @@ class CountryDetailViewController: UIViewController {
                 print("error \(appError)")
             case .success(let exchangeRate):
                 self?.rate = exchangeRate.rates[countryCode]
+                let roundedRate = self?.rate ?? 0
+                //let roundedRate = self?.rate?.rounded() ?? 0
                 DispatchQueue.main.async {
-                     self?.currencyLabel.text = "1 USD = \(self?.rate ?? 0)"
+                    self?.currencyLabel.text = "1 USD = \(String(format: "%.2f", roundedRate)) \(countryCode)"
                 }
                
                 
@@ -47,9 +49,7 @@ class CountryDetailViewController: UIViewController {
         guard let oneCountry = oneCountry else {
             fatalError("could not get object from prepare for segue")
         }
-        //                guard let currency = currency else {
-        //                    fatalError("could not get currency object")
-        //                }
+      
         countryName.text = oneCountry.name
         capitalLabel.text = "Capital: \(oneCountry.capital)"
         populationLabel.text = "Population of the country is \(oneCountry.population.description) people"
@@ -71,7 +71,6 @@ class CountryDetailViewController: UIViewController {
         
         let countryCurrency = oneCountry.currencies.first?.code ?? "no currency code"
         getCurrency(countryCode: countryCurrency)
-        //currencyLabel.text = currency?.rates[countryCurrency]?.description ?? "cannot get exchangeRate"
     }
 }
 
